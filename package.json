@@ -1,0 +1,59 @@
+{
+  "name": "next-loading-bar",
+  "version": "0.0.1",
+  "description": "Next Loading Bar",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "prepack": "npm run build",
+    "lint": "eslint --fix --cache src/",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "files": [
+    "dist/**/*.js*",
+    "dist/**/*.mjs*",
+    "dist/**/*.d*"
+  ],
+  "peerDependencies": {
+    "next": ">= 6.0.0",
+    "react": ">= 16.0.0"
+  },
+  "dependencies": {
+    "@types/nprogress": "^0.2.0",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.19",
+    "@types/react": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "next": "^13.4.9",
+    "prettier": "^3.0.0",
+    "react": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  },
+  "packageManager": "yarn@3.6.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItPohgero/next-loading-bar.git"
+  },
+  "keywords": [
+    "itpohgero",
+    "nextjs",
+    "loading-bar",
+    "next",
+    "progress",
+    "bar"
+  ],
+  "author": "wahyu agus arifin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItPohgero/next-loading-bar/issues"
+  },
+  "homepage": "https://github.com/ItPohgero/next-loading-bar#readme"
+}
