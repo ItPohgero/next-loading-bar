@@ -25,7 +25,7 @@ import NextLoadingBar from 'next-loading-bar';
 
 | Prop            | Type                                  | Default     | Description                                                 |
 | --------------- | ------------------------------------- | ----------- | ----------------------------------------------------------- | -------------------------------- |
-| `position`      | `'top'                                | 'bottom'`   | `'top'`                                                     | The position of the loading bar. |
+| `position`      | `'top'                                | 'top'`      | `'top' atau 'bottom'`                                       | The position of the loading bar. |
 | `color`         | `string`                              | `'#29D'`    | The color of the loading bar.                               |
 | `startPosition` | `number`                              | `0.3'`      | The start position of the loading bar.                      |
 | `stopDelayMs`   | `number`                              | `200`       | The stop delay in milliseconds.                             |
