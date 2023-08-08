@@ -1,76 +1,50 @@
-# Next Js Loading Bar
+\# Next Loading Bar
 
-## Install ?
+Next Loading Bar is a component that displays a loading bar during navigation between routes in a Next.js application.
 
-```bash
-npm i next-loading-bar
-```
+\## Installation
 
-## Cara menggunakan?
+You can install the package using npm:
 
-Letakkan code berikut pada root components
+\`\`\`bash
+npm install next-loading-bar
+\`\`\`
 
-```js
-import NextNProgress from 'nextjs-progressbar';
-```
+\## Usage
 
-And for rendering add `<NextNProgress />` to your `return()` in `MyApp()`:
+Import the \`NextLoadingBar\` component and use it in your application:
 
-```js
-import NextNProgress from 'nextjs-progressbar';
+\`\`\`jsx
+import NextLoadingBar from 'next-loading-bar';
 
-export default function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <NextNProgress />
-      <Component {...pageProps} />;
-    </>
-  );
-}
-```
+// ...
 
-### Default Config
+<NextLoadingBar />
+\`\`\`
 
-If no props are passed to `<NextNProgress />`, below is the default configuration applied.
+\## Props
 
-```jsx
-<NextNProgress color="#29D" startPosition={0.3} stopDelayMs={200} height={3} showOnShallow={true} />
-```
+\| Prop \| Type \| Default \| Description \|
+\|-------------------\|----------------------------------------\|-------------\|--------------------------------------------------------------------------------------------------------\|
+\| \`position\` \| \`'top' \| 'bottom'\` \| \`'top'\` \| The position of the loading bar. \|
+\| \`color\` \| \`string\` \| \`'#29D'\` \| The color of the loading bar. \|
+\| \`startPosition\` \| \`number\` \| \`0.3'\` \| The start position of the loading bar. \|
+\| \`stopDelayMs\` \| \`number\` \| \`200\` \| The stop delay in milliseconds. \|
+\| \`height\` \| \`number\` \| \`3\` \| The height of the loading bar. \|
+\| \`showOnShallow\` \| \`boolean\` \| \`true\` \| Whether to show the loading bar on shallow routes. \|
+\| \`options\` \| \`Partial<NProgress.NProgressOptions>\` \| \`null\` \| Other NProgress configuration options to pass to NProgress. \|
+\| \`nonce\` \| \`string\` \| \`undefined\` \| The nonce attribute to use for the \`style\` tag. \|
+\| \`transformCSS\` \| \`(css: string) => JSX.Element\` \| See below \| Use your custom CSS tag instead of the default one. \|
 
-- `color`: to change the default color of progressbar. You can also use `rgb(,,)` or `rgba(,,,)`.
-- `startPosition`: to set the default starting position : `0.3 = 30%`.
-- `stopDelayMs`: time for delay to stop progressbar in `ms`.
-- `height`: height of progressbar in `px`.
-- `showOnShallow`: You can choose whether you want the progressbar to be displayed if you're using shallow routing. It takes a boolean. Learn more about shallow routing [in Next.js docs](https://nextjs.org/docs/routing/shallow-routing).
+The \`transformCSS\` prop allows you to provide a custom CSS tag.
 
-### Advanced Config
-
-#### Adding nonce
-
-We use internal css in this package. If you are using csp, you can add nonce to the `<style>` tag by providing `nonce` prop to `<NextNProgress />` component.
-
-```jsx
-<NextNProgress nonce="my-nonce" />
-```
-
-#### Custom CSS
-
-You can use `transformCSS` prop to pass custom css.
-**Note:** You must return a `JSX.Element` from the function.
-
-```jsx
-<NextNProgress
-  transformCSS={(css) => {
-    // css is the default css string. You can modify it and return it or return your own css.
-    return <style>{css}</style>;
-  }}
+\`\`\`jsx
+// Example usage of transformCSS
+<NextLoadingBar
+transformCSS={(css) => <style nonce={nonce}>{css}</style>}
 />
-```
+\`\`\`
 
-#### Other Configs
+\## License
 
-You can use [other configurations](https://github.com/rstacruz/nprogress#configuration) which NProgress provides by adding a JSON in `options` props.
-
-```jsx
-<NextNProgress options={{ easing: 'ease', speed: 500 }} />
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
